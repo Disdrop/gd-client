@@ -1,0 +1,4 @@
+{
+  "editor.defaultFormatter": "rust-lang.rust-analyzer",
+  "rust-analyzer.rustfmt.overrideCommand": ["leptosfmt", "--tab-spaces", "2", "--stdin", "--rustfmt"]
+}
