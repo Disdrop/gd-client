@@ -2,20 +2,12 @@ use leptos::*;
 
 use stylers::*;
 
-mod window_container;
-
-use window_container::WindowContainer;
+use crate::component::WindowContainer;
 
 #[component]
 pub fn App() -> impl IntoView {
-  //let class_name = style_sheet!("./global.css");
+  let global_css = style_sheet!("./src/global.css");
   let styler_class = style! { "App",
-    body {
-      background-color: #F0F0F5;
-      height: 100vh;
-      display: grid;
-      grid-template-rows: 40px 1fr;
-    }
     #toolbar {
       background-color: #DCDCE1;
       border-style: solid;
@@ -25,6 +17,6 @@ pub fn App() -> impl IntoView {
   };
   view! { class=styler_class,
     <div id="toolbar"></div>
-    <WindowContainer />
+    <WindowContainer/>
   }
 }

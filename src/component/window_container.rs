@@ -11,14 +11,13 @@ pub fn WindowContainer() -> impl IntoView {
       gap: 10px;
     }
     div.window {
-      
+
     }
   };
-  view! {
-    class=styler_class,
+  view! { class=styler_class,
     <div id="window-container">
-     //<Window />
-     <div class="window"></div>
+      // <Window />
+      <div class="window"></div>
     </div>
   }
 }
