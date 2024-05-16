@@ -6,7 +6,7 @@ edition = "2021"
 [dependencies]
 console_error_panic_hook = "0.1.7"
 leptos = { version = "0.6.11", features = ["csr", "nightly"] }
-stylers = { version = "0.3.2" }
+stylers = "0.3.2"
 
 [build-dependencies]
 stylers = {  version = "0.3.2" }
