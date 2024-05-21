@@ -4,7 +4,7 @@ use stylers::style;
 
 #[component]
 pub fn Window() -> impl IntoView {
-  let styler_class = style! { "App",
+  let styler_class = style! { "Window",
     hq {
       color: red;
     }

@@ -1,8 +1,0 @@
-body {
-  margin: 0;
-  /* background-color: #F0F0F5; */
-  background-color: black;
-  height: 100vh;
-  display: grid;
-  grid-template-rows: 40px 1fr;
-}

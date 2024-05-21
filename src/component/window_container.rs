@@ -2,6 +2,8 @@ use leptos::*;
 
 use stylers::style;
 
+use crate::component::window::Window;
+
 #[component]
 pub fn WindowContainer() -> impl IntoView {
   let styler_class = style! { "WindowContainer",
@@ -16,8 +18,8 @@ pub fn WindowContainer() -> impl IntoView {
   };
   view! { class=styler_class,
     <div id="window-container">
-      // <Window />
-      <div class="window"></div>
+      <Window/>
+      <Window/>
     </div>
   }
 }

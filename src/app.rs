@@ -1,12 +1,11 @@
 use leptos::*;
 
-use stylers::*;
+use stylers::style;
 
 use crate::component::WindowContainer;
 
 #[component]
 pub fn App() -> impl IntoView {
-  let global_css = style_sheet!("./src/global.css");
   let styler_class = style! { "App",
     #toolbar {
       background-color: #DCDCE1;
