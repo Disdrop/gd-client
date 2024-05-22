@@ -11,11 +11,13 @@ pub fn App() -> impl IntoView {
       background-color: #DCDCE1;
       border-style: solid;
       border-width: 0 0 1px;
-      border-color: #DCDCE1;
+      border-color: #999999;
     }
   };
   view! { class=styler_class,
     <div id="toolbar"></div>
     <WindowContainer/>
+    //<WindowContainer/>
+    //<WindowContainer/>
   }
 }
