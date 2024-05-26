@@ -2,10 +2,9 @@ use leptos::*;
 use stylers::style;
 
 use crate::component::window_manager::model;
-use crate::component::window_manager::window_container::Window;
 
 #[component]
-pub fn WindowSplitter() -> impl IntoView {
+pub fn WindowSplitter(window_splitter: model::WindowSplitter) -> impl IntoView {
   let styler_class = style! { "WindowSplitter",
     .window-splitter {
       width: 100%;
@@ -26,5 +25,22 @@ pub fn WindowSplitter() -> impl IntoView {
       flex-direction: column;
     }
   };
-  view! { class=styler_class, <div class="window-splitter"></div> }
+
+  view! { class=styler_class,
+    <div class="window-splitter">
+      <div>
+        <For
+          // a function that returns the items we're iterating over; a signal is fine
+          each=move || window_splitter.children.clone()
+          // a unique key for each item
+          key=|counter| counter.id
+          // renders each item to a view
+          children=move |child: model::WindowSplitter| {
+              view! { <WindowSplitter window_splitter=child/> }
+          }
+        />
+
+      </div>
+    </div>
+  }
 }

@@ -10,17 +10,16 @@ pub struct Tab {
   pub title: String,
 }
 
+#[derive(Clone, Debug, PartialEq, Eq, Hash)]
 pub struct WindowSplitter {
+  pub tabs: Vec<Tab>,
+  pub id: usize,
   pub children: Vec<WindowSplitter>,
   pub direction: Direction,
 }
 
-enum Direction {
+#[derive(Clone, Debug, PartialEq, Eq, Hash)]
+pub enum Direction {
   Horizontal,
   Vertical,
-}
-
-enum WindowOrSplitter {
-  WindowSplitter,
-  Window,
 }

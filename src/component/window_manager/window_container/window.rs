@@ -2,10 +2,10 @@ use crate::component::window_manager::*;
 use stylers::style;
 
 #[component]
-pub fn Window(editor: Vec<model::Tab>) -> impl IntoView {
+pub fn Window(tabs: Vec<model::Tab>) -> impl IntoView {
   // let set_window_ordner = use_context::<WriteSignal<Vec<Vec<Window>>>>().expect("to have found");
 
-  let (selected_editor, set_selected_editor) = create_signal(editor[0].clone());
+  let (selected_editor, set_selected_editor) = create_signal(tabs[0].clone());
 
   let styler_class = style! { "Window",
     .window {
@@ -30,7 +30,7 @@ pub fn Window(editor: Vec<model::Tab>) -> impl IntoView {
   };
   view! { class=styler_class,
     <div class="window_bar">
-      {selected_editor.get().title} <For each=move || editor.clone() key=|n| n.clone() let:e>
+      {selected_editor.get().title} <For each=move || tabs.clone() key=|n| n.clone() let:e>
 
         {
             let d = e.clone();

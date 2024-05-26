@@ -7,7 +7,6 @@ use crate::component::window_manager::model;
 pub mod window;
 pub mod window_splitter;
 use window::Window;
-use window_splitter::WindowSplitter;
 
 #[component]
 pub fn WindowContainer() -> impl IntoView {
@@ -40,57 +39,10 @@ pub fn WindowContainer() -> impl IntoView {
     },
   ];
 
-  let windows = vec![
-    vec![
-      model::Window {
-        id: 1,
-        tabs: tabs.clone(),
-      },
-      model::Window {
-        id: 2,
-        tabs: tabs.clone(),
-      },
-    ],
-    vec![model::Window {
-      id: 3,
-      tabs: tabs.clone(),
-    }],
-  ];
-
-  let (editors, _) = create_signal::<Vec<model::Tab>>(tabs);
-
-  let (windows_order, set_window_order) = create_signal::<Vec<Vec<model::Window>>>(windows);
-
-  provide_context(set_window_order);
-  // let (windows, _) = create_signal::<Vec<Editor>>(editors);
+  // let window = model::WindowOrSplitter::Window(model::Window { id: 0, tabs });
 
   view! { class=styler_class,
-    <div class="window-container">
-      <For each=move || windows_order.get() key=|n| n.clone() let:window_column>
-        <div class="window-row">
-          <For each=move || window_column.clone() key=|n| n.clone() let:window>
-            <div class="window-column">
-              <Window editor=window.tabs.clone()/>
-            </div>
-          </For>
-        </div>
-      </For>
-
-    </div>
+    // <Window window=window/>
+    <div class="window-container"></div>
   }
 }
-
-// />
-
-// <For
-//   // a function that returns the items we're iterating over; a signal is fine
-//   each={editors}
-//   // a unique key for each item
-//   key=|counter| counter.id
-//   // renders each item to a view
-//   children=move |counter: Editor| {
-//     view! {
-//       <Window editor={counter}/>
-//     }
-//   }
-// />
