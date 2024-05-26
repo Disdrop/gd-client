@@ -7,10 +7,6 @@ edition = "2021"
 console_error_panic_hook = "0.1.7"
 leptos = { version = "0.6.11", features = ["csr", "nightly"] }
 leptos-use = "0.10.10"
-<<<<<<< HEAD
-=======
-leptos_meta = "0.6.11"
->>>>>>> aa17f7f (Co-authored-by: Yuu <Yuuww@users.noreply.github.com>)
 stylers = "0.3.2"
 
 [build-dependencies]

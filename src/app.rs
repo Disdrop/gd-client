@@ -17,6 +17,6 @@ pub fn App() -> impl IntoView {
   };
   view! { class=styler_class,
     <div id="toolbar"></div>
-    <WindowContainer/>
+    <WindowManager/>
   }
 }
